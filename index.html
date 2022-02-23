@@ -21,6 +21,15 @@
                 <input type="text" class="form-control" id="policyUrl"
                        placeholder="https://raw.githubusercontent.com/Azure/azure-policy/master/built-in-policies/policyDefinitions/Network/VirtualNetworkServiceEndpoint_ContainerRegistry_Audit.json">
             </div>
+            <div class="mb-3">
+                <label for="fileName" class="form-label">Filename</label>
+                <input type="text" class="form-control" id="fileName"
+                       placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="jsonCode" class="form-label">Policy JSON</label>
+                <textarea class="form-control" id="jsonCode" rows="20"></textarea>
+            </div>
             <button id="generate" type="button" class="btn btn-primary">Generate .tf</button>
             <button id="copyTfCodeButton" type="button" class="btn btn-primary">Copy .tf</button>
         </div>

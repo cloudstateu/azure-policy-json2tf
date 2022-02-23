@@ -1,7 +1,9 @@
 const generateButton = document.getElementById('generate'),
   copyTfCodeButton = document.getElementById('copyTfCodeButton'),
   policyUrlInput = document.getElementById('policyUrl'),
-  tfCodeTextarea = document.getElementById('tfCode');
+  tfCodeTextarea = document.getElementById('tfCode'),
+  jsonCodeTextarea = document.getElementById('jsonCode'),
+  fileNameInput = document.getElementById('fileName');
 
 function fetchJson(url) {
   return fetch(url)
@@ -58,8 +60,16 @@ PARAMETERS
 }
 
 generateButton.addEventListener('click', async function (event) {
-  const policyUrl = policyUrlInput.value,
+  const policyUrl = policyUrlInput.value;
+  let policyJson = {},
+    fileName = fileNameInput.value;
+
+  if (policyUrl) {
     policyJson = await fetchJson(policyUrl);
+    fileName = policyUrl.substring(policyUrl.lastIndexOf('/') + 1).split('.').slice(0, -1).join('.');
+  }else{
+    policyJson = JSON.parse(jsonCodeTextarea.value);
+  }
 
   generateTfCode(policyJson, policyUrl);
 });
