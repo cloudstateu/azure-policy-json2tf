@@ -1,0 +1,23 @@
+{
+  "name": "azure-policy-json-to-tf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudstateu/azure-policy-json2tf.git"
+  },
+  "author": "Chmurowisko Sp. z o.o.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloudstateu/azure-policy-json2tf/issues"
+  },
+  "homepage": "https://github.com/cloudstateu/azure-policy-json2tf#readme",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}
